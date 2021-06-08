@@ -1,0 +1,18 @@
+[
+   {
+        "period": 0,
+        "name": "Pastoral Care",
+        "prof": "",
+        "place": "",
+        "day": 1,
+        "startTime": [11,0]
+    },
+    {
+        "period": 1,
+        "name": "Math",
+        "prof": "",
+        "place": "",
+        "day": 1,
+        "startTime": [2,0]
+    }
+]

@@ -1,26 +1,14 @@
-const classes = [
-    {
-        "period": 0,
-        "name": "Pastoral Care",
-        "prof": "",
-        "place": "",
-        "day": 1,
-        "startTime": [11,0]
-    },
-    {
-        "period": 1,
-        "name": "Math",
-        "prof": "",
-        "place": "",
-        "day": 1,
-        "startTime": [2,0]
-    }
-]
+module.exports = {
+    name: 'period',
+    
+	description: 'Display info about this server.',
+	execute(message) {
+        
+        let classes = require('../../timeTable.json');
+        message.channel.send(classes[getCurrentPeriod()].name);
 
-function getCurrentPeriod() {
+            function getCurrentPeriod() {
     const date = new Date();
-    console.log(date.getHours());
-
     for (var i = 0; i < classes.length; i += 1) {
         if (date.getHours() >= classes[i].startTime[0] && date.getMinutes() >= classes[i].startTime[1]) {
             if (i+1 === classes.length) {
@@ -32,4 +20,5 @@ function getCurrentPeriod() {
     }
     return null;
 }
-console.log(classes[getCurrentPeriod()].name);
+	},
+};
